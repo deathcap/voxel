@@ -8,6 +8,14 @@ module.exports = function(opts) {
   return chunker(opts)
 }
 
+module.exports.meshers = {
+  culled: require('./meshers/culled').mesher,
+  greedy: require('./meshers/greedy').mesher,
+  transgreedy: require('./meshers/transgreedy').mesher,
+  monotone: require('./meshers/monotone').mesher,
+  stupid: require('./meshers/stupid').mesher
+}
+
 module.exports.Chunker = chunker.Chunker
 module.exports.geometry = {}
 module.exports.generator = {}
